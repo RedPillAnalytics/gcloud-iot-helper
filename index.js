@@ -10,7 +10,7 @@ const key = '****************'
  */
 exports.main = (req, res) => {
     rp({uri: `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channel}&fields=items/statistics/subscriberCount&key=${key}`, json: true}).then((body) => {
-        res.status(200).json(body)
+        res.status(200).json(body.items[0].statistics)
     }).catch((error) => {
         console.error(error)
         res.status(500)
