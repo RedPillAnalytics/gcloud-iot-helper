@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/emilyplusplus/gcloud-iot-helper/issues"
   },
-  "homepage": "https://github.com/emilyplusplus/gcloud-iot-helper#readme"
+  "homepage": "https://github.com/emilyplusplus/gcloud-iot-helper#readme",
+  "dependencies": {
+    "request": "^2.83.0"
+  }
 }
