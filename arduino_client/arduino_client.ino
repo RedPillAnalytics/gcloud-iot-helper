@@ -2,7 +2,7 @@
 #include <EthernetV2_0.h>
 
 byte mac[] = {  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-char server[] = "https://us-central1-emilyplusplus-iot-helper.cloudfunctions.net"; // Google
+char server[] = "http://us-central1-emilyplusplus-iot-helper.cloudfunctions.net"; // Google
 
 EthernetClient client;
 #define W5200_CS  10
@@ -26,7 +26,9 @@ void setup() {
 
   if (client.connect(server, 80)) {
     Serial.println("connected");
-    client.println("GET /yt-subscribers HTTP/1.0");
+    client.println("GET /yt-subscribers HTTP/1.1");
+    client.println("Host: us-central1-emilyplusplus-iot-helper.cloudfunctions.net");
+    client.println("Connection: close");
     client.println();
   } 
   else {
